@@ -1,4 +1,5 @@
-FROM golang:1.11-alpine
+#FROM golang:1.11-alpine
+FROM golang:1.11
 
 RUN apt-get update && \
     apt-get install ca-certificates libgnutls30 -y
