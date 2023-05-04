@@ -1,5 +1,5 @@
 #FROM golang:1.11-alpine
-FROM golang:1.11
+FROM gitlab.84.201.150.198.sslip.io:443/gitlab-instance-711bf56d/dependency_proxy/containers/golang:1.11
 
 RUN apt-get update && \
     apt-get install ca-certificates libgnutls30 git -y
@@ -12,7 +12,7 @@ WORKDIR /go/src/github.com/microservices-demo/user/
 RUN go get -v github.com/Masterminds/glide 
 RUN glide install && CGO_ENABLED=0 go build -a -installsuffix cgo -o /user main.go
 
-FROM alpine:3.4
+FROM gitlab.84.201.150.198.sslip.io:443/gitlab-instance-711bf56d/dependency_proxy/containers/alpine:3.4
 
 ENV	SERVICE_USER=myuser \
 	SERVICE_UID=10001 \

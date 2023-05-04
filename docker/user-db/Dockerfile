@@ -1,4 +1,4 @@
-FROM mongo:3
+FROM gitlab.84.201.150.198.sslip.io:443/gitlab-instance-711bf56d/dependency_proxy/containers/mongo:3
 ADD ./scripts /tmp/scripts
 
 # Modify child mongo to use /data/db-accounts as dbpath (because /data/db wont persist the build because it is already a VOLUME)
